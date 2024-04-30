@@ -7,6 +7,7 @@ import ShowFullItem from "./components/ShowFullItem";
 import Calendar from "./components/Calendar"; // Додаємо імпорт компоненту календаря
 
 class App extends React.Component {
+  
   constructor(props) {
     super(props);
     this.state = {
@@ -106,9 +107,15 @@ class App extends React.Component {
         <Header orders={this.state.orders} onDelete={this.deleteOrder} />
         <Categories chooseCategory={this.chooseCategory} />
         <Staff onShowItem={this.onShowItem} items={this.state.currentItems} onAdd={this.addToOrder} />
-        <Calendar /> {/* Додаємо компонент календаря */}
         {this.state.showFullItem && <ShowFullItem onAdd={this.addToOrder} onShowItem={this.onShowItem} item={this.state.fullItem} />}
+        <div className="map-container">
+          <div className="calendar">
+            <Calendar /> 
+          </div>
+          <iframe className="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d81463.60303179525!2d30.34094529969099!3d50.352799486089104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4c8364212103d%3A0x172e18f44d64aa21!2z0J3QvtCy0LDRjyDQm9C40L3QuNGP!5e0!3m2!1sru!2sua!4v1714499738751!5m2!1sru!2sua" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
         <Footer />
+
       </div>
     );
   }
