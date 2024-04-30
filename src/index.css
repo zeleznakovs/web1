@@ -270,3 +270,20 @@ footer {
     text-align: center;
     margin-top: 100px;
 }
+
+
+.map-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .calendar {
+    margin-right: 0px; /* Простір між календарем і мапою */
+  }
+  
+  .map {
+    width: 600px; /* Задаємо ширину мапи */
+    height: 450px; /* Задаємо висоту мапи */
+    border: 0; /* Приховуємо рамку мапи */
+  }
+  
